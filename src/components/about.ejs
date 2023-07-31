@@ -22,112 +22,118 @@
 
 <section class="container">
 
-    <div class="content-container">
-        <h3>Build Process</h3>
-        <p>This website is built using a simple and efficient build process that enables developers to create dynamic
-            and reusable content with ease. Here's a step-by-step guide on how to add new content:</p>
+    <h1>Project LoFi EJS</h1>
 
-        <ol>
-            <li>Create EJS Templates: Start by creating reusable EJS templates for different sections of your website.
-                EJS allows you to dynamically generate content and easily update it across the site.</li>
-            <li>Define JavaScript Components: Use JavaScript classes to define reusable components that contain dynamic
-                data and functionality. These components can be used to populate your EJS templates with dynamic
-                content.</li>
-            <li>Generate Dynamic Content: Utilize the JavaScript components to generate dynamic content within your EJS
-                templates. This allows you to maintain a consistent structure while updating the content dynamically.
-            </li>
-            <li>Run the Build Process: Execute the custom build process, which combines the EJS templates and JavaScript
-                components to generate static HTML files for each page of the website.</li>
-            <li>Review and Deploy: Once the build process is complete, review the generated HTML files to ensure
-                everything looks as expected. Then, deploy the static website to your hosting environment.</li>
-        </ol>
-    </div>
+    <p>This project is a template for building tiny websites with dynamic content using EJS and Node.js. It provides a
+        simple development workflow and includes features like server-side rendering.</p>
 
-    <div class="content-container">
-        <h3>Developer Tools</h3>
-        <ul>
-            <li>EJS: For dynamic content generation and templating</li>
-            <li>Node.js: For server-side rendering and build process</li>
-            <li>JavaScript (ES6+): For client-side interactivity and functionality</li>
-            <li>Nodemon: For automatic server reloading during development</li>
-        </ul>
+    <h2>Features</h2>
+    <ul>
+        <li>Dynamic content generation using EJS templates</li>
+        <li>Server-side rendering for faster page loads and SEO</li>
+        <li>Firebase hosting for easy deployment</li>
+        <li>Automatic server reloading during development with Nodemon</li>
+    </ul>
 
-        <h3>Runtime Technologies</h3>
-        <ul>
-            <li>HTML5 and CSS3: For the structure and styling of the site</li>
-            <li>Firebase: For hosting and deployment of the website (optional)</li>
-        </ul>
-    </div>
+    <h2>Getting Started</h2>
+    <h3>Prerequisites</h3>
+    <ul>
+        <li>Node.js (Download and install from <a href="https://nodejs.org" target="_blank">https://nodejs.org</a>)</li>
+        <li>npm (Comes with Node.js)</li>
+    </ul>
+
+    <h3>Installation</h3>
+    <ol>
+        <li>Clone the repository or download the ZIP file.</li>
+        <li>Open a terminal and navigate to the project directory.</li>
+        <li>Install the project dependencies.</li>
+    </ol>
+
+    <pre><code class="content">
+cd project-directory
+npm install
+    </code></pre>
+
+    <h2>Development</h2>
+    <p>To start the development server, use the following command:</p>
+
+    <pre><code class="content">
+npm run dev
+    </code></pre>
+
+    <p>This will build the project and start the server. The website will be available at <a
+            href="http://localhost:3000" target="_blank">http://localhost:3000</a>.</p>
+
+    <h2>Project Structure</h2>
+    <p>The project structure is organized as follows:</p>
+    <pre><code class="content">
+- project-directory
+  
+|- modules /*no need to touch these */
+    |- build.js /*generates the static files */ 
+    |- server.js /*for local development only */
+|- src
+     |- components
+        |- counter.ejs
+        |- contactForm.ejs */you can add as many components as you like */
+     |- baseTemplate.ejs /*you can add as many templates as you like */
+  |- public
+     |- /* where static pages are generated  */
+  |- firebase.json /* where the routing is configured automatically by npm run build */
+
+    </code></pre>
+
+    <h2>Creating New Pages</h2>
+    <ol>
+        <li>Create a new EJS template file (and any relevant components) in the src directory, e.g.,
+            <code>newPage.ejs</code>.
+        </li>
+        <li>Add the new entry to siteData.json</li>
+        <li>Save the new EJS template and run the build script.</li>
+        <li>The new page will be generated in the <code>public</code> directory and can be accessed at <a
+                href="http://localhost:3000/newpage" target="_blank">http://localhost:3000/newpage</a>.</li>
+    </ol>
+
+    <h2>Deployment</h2>
+    <ol>
+        <li>Install the Firebase CLI globally:</li>
+    </ol>
+
+    <pre><code class="content">
+npm install -g firebase-tools
+    </code></pre>
+
+    <ol start="2">
+        <li>Authenticate with Firebase:</li>
+    </ol>
+
+    <pre><code class="content">
+firebase login
+    </code></pre>
+
+    <ol start="3">
+        <li>Initialize Firebase for your project (if not already done):</li>
+    </ol>
+
+    <pre><code class="content">
+firebase init hosting
+    </code></pre>
+
+    <ol start="4">
+        <li>Build and deploy the website:</li>
+    </ol>
+
+    <pre><code class="content">
+npm run deploy
+    </code></pre>
+
+    <p>Your website will now be live on the Firebase hosting URL.</p>
+
+    <h2>Contributing</h2>
+    <p>Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an
+        issue or submit a pull request.</p>
+
+    <h2>License</h2>
+    <p>This project is licensed under the <a href="LICENSE" target="_blank">MIT License</a>.</p>
+
 </section>
-
-<div class="content-container">
-
-    <h2>Counter</h2>
-
-
-    <p>Current Count: <span id="counter">0</span></p>
-    <button onclick="increment()">Increment</button>
-    <button onclick="decrement()">Decrement</button>
-
-    <p>
-        You can also add reactive elements to ejs files by using pure javascript.
-    </p>
-
-    <pre>
-        <code>
-   
-            &lt;html&gt;
-            <p>Current Count: <span id="counter">0</span></p>
-            <button onclick="increment()">Increment</button>
-            <button onclick="decrement()">Decrement</button>
-            &lt;html&gt;
-        
-        &lt;script&gt;
-
-            let script = '';
-            let state = {};
-            let count = 0;
-            function increment() {
-                count++;
-                updateCounter();
-            }
-            function decrement() {
-                count--;
-                updateCounter();
-            }
-            function updateCounter() {
-                const counterElement = document.getElementById('counter');
-                if (counterElement) {
-                    counterElement.innerHTML = count;
-                }
-            }
-        
-            &lt;script&gt;
-
-
-            </code>
-            </pre>
-
-</div>
-
-
-<script>
-    let script = '';
-    let state = {};
-    let count = 0;
-    function increment() {
-        count++;
-        updateCounter();
-    }
-    function decrement() {
-        count--;
-        updateCounter();
-    }
-    function updateCounter() {
-        const counterElement = document.getElementById('counter');
-        if (counterElement) {
-            counterElement.innerHTML = count;
-        }
-    }
-
-</script>

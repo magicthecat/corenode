@@ -17,7 +17,7 @@ class PageGenerator {
         }
     }
 
-    generateTopNavigation0() {
+    generateTopNavigation() {
         const navigationItems = this.pagesData
             .filter((pageData) => pageData.pageName !== '404')
             .map((pageData) => `<li><a href="${pageData.pageName === 'home' ? '/' : `/${pageData.pageName}`}">${pageData.pageName}</a></li>`)

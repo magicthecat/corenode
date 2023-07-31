@@ -138,3 +138,77 @@
         });
     });
 </script>
+
+
+
+<div class="content-container">
+
+    <h2>Counter</h2>
+
+
+    <p>Current Count: <span id="counter">0</span></p>
+    <button onclick="increment()">Increment</button>
+    <button onclick="decrement()">Decrement</button>
+
+    <p>
+        You can also add reactive elements to ejs files by using pure javascript.
+    </p>
+
+    <pre>
+        <code>
+   
+            &lt;html&gt;
+            <p>Current Count: <span id="counter">0</span></p>
+            <button onclick="increment()">Increment</button>
+            <button onclick="decrement()">Decrement</button>
+            &lt;html&gt;
+        
+        &lt;script&gt;
+
+            let script = '';
+            let state = {};
+            let count = 0;
+            function increment() {
+                count++;
+                updateCounter();
+            }
+            function decrement() {
+                count--;
+                updateCounter();
+            }
+            function updateCounter() {
+                const counterElement = document.getElementById('counter');
+                if (counterElement) {
+                    counterElement.innerHTML = count;
+                }
+            }
+        
+            &lt;script&gt;
+
+
+            </code>
+            </pre>
+
+</div>
+
+
+<script>
+    let script = '';
+    let state = {};
+    let count = 0;
+    function increment() {
+        count++;
+        updateCounter();
+    }
+    function decrement() {
+        count--;
+        updateCounter();
+    }
+    function updateCounter() {
+        const counterElement = document.getElementById('counter');
+        if (counterElement) {
+            counterElement.innerHTML = count;
+        }
+    }
+
+</script>
