@@ -1,0 +1,27 @@
+{
+    "pagesData": [
+        {
+            "fileName": "index",
+            "pageName": "home",
+            "dynamicContent": "home",
+            "template": "baseTemplate"
+        },
+        {
+            "fileName": "about",
+            "pageName": "about",
+            "dynamicContent": "about",
+            "template": "baseTemplate"
+        },
+        {
+            "fileName": "contact",
+            "pageName": "contact",
+            "dynamicContent": "contactForm",
+            "template": "baseTemplate"
+        },
+        {
+            "fileName": "404",
+            "pageName": "404",
+            "template": "baseTemplate"
+        }
+    ]
+}

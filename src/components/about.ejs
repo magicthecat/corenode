@@ -1,0 +1,133 @@
+<style>
+    .content-container {
+        border: 2px solid #333;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #f7f7f7;
+        margin-bottom: 20px;
+    }
+
+    code {
+        display: block;
+        background-color: #f7f7f7;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 1.5;
+        font-family: 'Courier New', monospace;
+    }
+</style>
+
+<section class="container">
+
+    <div class="content-container">
+        <h3>Build Process</h3>
+        <p>This website is built using a simple and efficient build process that enables developers to create dynamic
+            and reusable content with ease. Here's a step-by-step guide on how to add new content:</p>
+
+        <ol>
+            <li>Create EJS Templates: Start by creating reusable EJS templates for different sections of your website.
+                EJS allows you to dynamically generate content and easily update it across the site.</li>
+            <li>Define JavaScript Components: Use JavaScript classes to define reusable components that contain dynamic
+                data and functionality. These components can be used to populate your EJS templates with dynamic
+                content.</li>
+            <li>Generate Dynamic Content: Utilize the JavaScript components to generate dynamic content within your EJS
+                templates. This allows you to maintain a consistent structure while updating the content dynamically.
+            </li>
+            <li>Run the Build Process: Execute the custom build process, which combines the EJS templates and JavaScript
+                components to generate static HTML files for each page of the website.</li>
+            <li>Review and Deploy: Once the build process is complete, review the generated HTML files to ensure
+                everything looks as expected. Then, deploy the static website to your hosting environment.</li>
+        </ol>
+    </div>
+
+    <div class="content-container">
+        <h3>Developer Tools</h3>
+        <ul>
+            <li>EJS: For dynamic content generation and templating</li>
+            <li>Node.js: For server-side rendering and build process</li>
+            <li>JavaScript (ES6+): For client-side interactivity and functionality</li>
+            <li>Nodemon: For automatic server reloading during development</li>
+        </ul>
+
+        <h3>Runtime Technologies</h3>
+        <ul>
+            <li>HTML5 and CSS3: For the structure and styling of the site</li>
+            <li>Firebase: For hosting and deployment of the website (optional)</li>
+        </ul>
+    </div>
+</section>
+
+<div class="content-container">
+
+    <h2>Counter</h2>
+
+
+    <p>Current Count: <span id="counter">0</span></p>
+    <button onclick="increment()">Increment</button>
+    <button onclick="decrement()">Decrement</button>
+
+    <p>
+        You can also add reactive elements to ejs files by using pure javascript.
+    </p>
+
+    <pre>
+        <code>
+   
+            &lt;html&gt;
+            <p>Current Count: <span id="counter">0</span></p>
+            <button onclick="increment()">Increment</button>
+            <button onclick="decrement()">Decrement</button>
+            &lt;html&gt;
+        
+        &lt;script&gt;
+
+            let script = '';
+            let state = {};
+            let count = 0;
+            function increment() {
+                count++;
+                updateCounter();
+            }
+            function decrement() {
+                count--;
+                updateCounter();
+            }
+            function updateCounter() {
+                const counterElement = document.getElementById('counter');
+                if (counterElement) {
+                    counterElement.innerHTML = count;
+                }
+            }
+        
+            &lt;script&gt;
+
+
+            </code>
+            </pre>
+
+</div>
+
+
+<script>
+    let script = '';
+    let state = {};
+    let count = 0;
+    function increment() {
+        count++;
+        updateCounter();
+    }
+    function decrement() {
+        count--;
+        updateCounter();
+    }
+    function updateCounter() {
+        const counterElement = document.getElementById('counter');
+        if (counterElement) {
+            counterElement.innerHTML = count;
+        }
+    }
+
+</script>

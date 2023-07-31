@@ -1,0 +1,140 @@
+<style>
+    /* Reset default margin and padding for all elements */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Page content styles */
+    .about-content {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Accordion styles */
+    .accordion {
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .accordion-btn {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background-color: #f1f1f1;
+        padding: 10px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+
+    .accordion-content p {
+        padding: 10px;
+    }
+
+    .accordion-content.active {
+        max-height: 500px;
+        /* Adjust this value as needed */
+    }
+</style>
+<section>
+    <div class="about-content">
+        <h2>About Our Eco-Friendly Website</h2>
+
+        <div class="accordion">
+            <button class="accordion-btn">Our Mission</button>
+            <div class="accordion-content">
+                <p>
+                    Welcome to our eco-friendly website! We are on a mission to make a positive impact on the
+                    environment by
+                    promoting and building tiny websites. Our vision is to create a sustainable web ecosystem that
+                    reduces carbon
+                    emissions and contributes to a greener planet.
+                </p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn">Sustainable Development</button>
+            <div class="accordion-content">
+                <p>
+                    In today's digital age, the internet plays a significant role in our lives. However, the rapid
+                    growth of large and
+                    resource-intensive websites has led to increased energy consumption and greenhouse gas emissions. As
+                    web developers,
+                    we believe it's our responsibility to address this issue and implement eco-conscious practices.
+                </p>
+                <p>
+                    Tiny websites are minimalist and lightweight, designed with efficiency in mind. By adopting a
+                    less-is-more approach,
+                    we prioritize fast loading times, reduced data usage, and optimized performance. This not only
+                    benefits users with
+                    quicker access to information but also lessens the strain on servers and energy consumption.
+                </p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn">Green Hosting</button>
+            <div class="accordion-content">
+                <p>
+                    Our team is dedicated to using sustainable development techniques, such as optimizing images,
+                    compressing code, and
+                    leveraging caching strategies. We also follow best practices to minimize the website's environmental
+                    impact,
+                    including hosting on green servers powered by renewable energy sources.
+                </p>
+                <p>
+                    With green hosting, our website's energy consumption is offset by renewable energy, reducing its
+                    overall carbon
+                    footprint. By choosing eco-friendly hosting solutions, we align our technology with our commitment
+                    to sustainability.
+                </p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn">Join the Movement</button>
+            <div class="accordion-content">
+                <p>
+                    Together, we can contribute to a more sustainable future. By choosing tiny websites, we can
+                    collectively reduce our
+                    carbon footprint and preserve precious resources. We invite you to join us in this eco-friendly
+                    movement and be part
+                    of the solution.
+                </p>
+                <p>
+                    Thank you for supporting our cause and for visiting our eco-friendly website. Together, we can make
+                    a difference.
+                    Let's build a better, greener internet for everyone!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const accordionBtns = document.querySelectorAll('.accordion-btn');
+
+    accordionBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const content = btn.nextElementSibling;
+            content.classList.toggle('active');
+
+            if (content.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            } else {
+                content.style.maxHeight = '0';
+            }
+        });
+    });
+</script>
